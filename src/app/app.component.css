@@ -1,0 +1,14 @@
+.title-container{
+    display:flex;
+    justify-content: center;
+}
+
+.form-conntainer{
+    display:flex;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.form-data{
+    padding: 10rem;
+}
