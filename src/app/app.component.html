@@ -4,47 +4,180 @@
 
 <div class="form-container">
   <div class="form-data">
+    <h2></h2>
 
-    <!-- ? Input -->
-    <div class="mb-3">
-      <label for="formGroupExampleInput" class="form-label">Edad</label>
-      <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Edad">
-    </div>
+    <form [formGroup]="formulario">
+      <!-- Edad -->
+      <div class="mb-3">
+        <label for="person_age" class="form-label">Edad</label>
+        <input
+          type="number"
+          class="form-control"
+          id="person_age"
+          placeholder="Edad"
+          formControlName="person_age"
+        />
+      </div>
+      <!-- Ingreso Anual -->
+      <div class="mb-3">
+        <label for="person_income" class="form-label">Ingreso Anual</label>
+        <input
+          type="number"
+          class="form-control"
+          id="person_income"
+          placeholder="Dolares"
+          formControlName="person_income"
+        />
+      </div>
 
-    <!-- ? Input -->
-    <div class="mb-3">
-      <label for="formGroupExampleInput" class="form-label">Ingreso Anual</label>
-      <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Dolares">
-    </div>
+      <!-- Tiempo Trabajado -->
+      <div class="mb-3">
+        <label for="person_emp_length" class="form-label"
+          >Tiempo trabajado</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="person_emp_length"
+          placeholder="Años"
+          formControlName="person_emp_length"
+        />
+      </div>
 
-    <!-- ? Input -->
-    <div class="mb-3">
-      <label for="formGroupExampleInput" class="form-label">Tiempo trabajado</label>
-      <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Años">
-    </div>
+      <!-- Cuanto Vas a Prestar -->
+      <div class="mb-3">
+        <label for="loan_amnt" class="form-label">¿Cuánto vas a prestar?</label>
+        <input
+          type="number"
+          class="form-control"
+          id="loan_amnt"
+          placeholder="Dolares"
+          formControlName="loan_amnt"
+        />
+      </div>
 
-    <!-- ? Input -->
-    <div class="mb-3">
-      <label for="formGroupExampleInput" class="form-label">¿Cuanto vas a prestar?</label>
-      <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Dolares">
-    </div>
+      <!-- Tasa de Interés -->
+      <div class="mb-3">
+        <label for="loan_int_rate" class="form-label">Tasa de interés</label>
+        <input
+          type="number"
+          class="form-control"
+          id="loan_int_rate"
+          placeholder="%"
+          formControlName="loan_int_rate"
+        />
+      </div>
 
-    <!-- ? Input -->
-    <div class="mb-3">
-      <label for="formGroupExampleInput" class="form-label">Tasa de interés</label>
-      <input type="number" class="form-control" id="formGroupExampleInput" placeholder="%">
-    </div>
+      <!-- Porcentaje del Préstamo respecto al Ingreso -->
+      <div class="mb-3">
+        <label for="loan_percent_income" class="form-label"
+          >Porcentaje del préstamo respecto al ingreso</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="loan_percent_income"
+          placeholder="Porcentaje"
+          formControlName="loan_percent_income"
+        />
+      </div>
 
-    <!-- ? Input -->
-    <div class="mb-3"> 
-      <label for="formGroupExampleInput" class="form-label">Porcentaje del préstamo respecto al ingreso</label>
-      <input type="number" class="form-control" id="formGroupExampleInput" placeholder="Edad">
-    </div>
+      <!-- Tiempo de Historial Crediticio -->
+      <div class="mb-3">
+        <label for="cb_person_cred_hist_length" class="form-label"
+          >Tiempo de historial crediticio</label
+        >
+        <input
+          type="number"
+          class="form-control"
+          id="cb_person_cred_hist_length"
+          placeholder="Años"
+          formControlName="cb_person_cred_hist_length"
+        />
+      </div>
 
-    <a class="btn btn-primary">Calcular</a>
+      <!-- Tipo de Vivienda (Lista Desplegable) -->
+      <div class="mb-3">
+        <label for="person_home_ownership_num" class="form-label"
+          >Tipo de vivienda</label
+        >
+        <select
+          class="form-select"
+          id="person_home_ownership_num"
+          formControlName="person_home_ownership_num"
+        >
+          <option value="0">Hipoteca</option>
+          <option value="2">Propio</option>
+          <option value="3">Renta</option>
+          <option value="1">Otro</option>
+          <!-- Agrega las opciones necesarias -->
+        </select>
+      </div>
+
+      <!-- Motivo de Prestamo (Lista Desplegable) -->
+      <div class="mb-3">
+        <label for="loan_intent_num" class="form-label"
+          >Motivo de préstamo</label
+        >
+        <select
+          class="form-select"
+          id="loan_intent_num"
+          formControlName="loan_intent_num"
+        >
+          <option value="0">Deudas</option>
+          <option value="1">Educación</option>
+          <option value="2">Mejoras para el hogar</option>
+          <option value="3">Médica</option>
+          <option value="4">Personal</option>
+          <option value="5">Empresa</option>
+          <!-- Agrega las opciones necesarias -->
+        </select>
+      </div>
+
+      <!-- Grado Crediticio (Lista Desplegable) -->
+      <div class="mb-3">
+        <label for="loan_grade_num" class="form-label"
+          >Indique su grado crediticio</label
+        >
+        <select
+          class="form-select"
+          id="loan_grade_num"
+          formControlName="loan_grade_num"
+        >
+          <option value="3">D</option>
+          <option value="1">B</option>
+          <option value="2">C</option>
+          <option value="0">A</option>
+          <option value="4">E</option>
+          <option value="5">F</option>
+          <option value="6">G</option>
+
+          <!-- Agrega las opciones necesarias -->
+        </select>
+      </div>
+
+      <!-- Tiene Historial de Deuda (Binario) -->
+      <div class="mb-3">
+        <label for="cb_person_default_on_file_num" class="form-label"
+          >¿Tiene historial de deuda? (Sí, no)</label
+        >
+        <select
+          class="form-select"
+          id="cb_person_default_on_file_num"
+          formControlName="cb_person_default_on_file_num"
+        >
+          <option value="1">Sí</option>
+          <option value="0">No</option>
+        </select>
+      </div>
+
+      <a class="btn btn-primary" (click)="calcular()">Calcular</a>
+    </form>
   </div>
-
-  <h1>resultado</h1>
-
-
+  <div class="result-container">
+    <h1>Resultados</h1>
+    <h3>Su ScoreCard es: {{ result.credit_score_scaled }}</h3>
+    <h3 *ngIf="result.y_pred == 0">Su crédito ha sido aprobado</h3>
+    <h3 *ngIf="result.y_pred == 1">Su crédito no ha sido aprobado</h3>
+  </div>
 </div>

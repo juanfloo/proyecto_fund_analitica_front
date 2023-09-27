@@ -1,14 +1,23 @@
-.title-container{
-    display:flex;
-    justify-content: center;
+.title-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.form-conntainer{
-    display:flex;
-    justify-content: center;
-    padding: 1rem;
+.form-container {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
 }
 
-.form-data{
-    padding: 10rem;
+.form-data {
+  padding-right: 10rem;
+  padding-left: 10rem;
+  width: 50%;
+}
+
+.result-container {
+  padding-right: 10rem;
+  padding-left: 10rem;
+  width: 50%;
 }
